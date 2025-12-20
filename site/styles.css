@@ -23,13 +23,15 @@
 }
 
 .list-header {
-	background-color: var(--header2-color);
+	background-color: var(--header-color);
 	text-align: center;
 	z-index: 1;
 	padding-top: 6px;
 	padding-bottom: 3px;
 	font-weight: 600;
 	font-size: 1.1rem;
+	width: 250px;
+	order: -2;
 }
 
 .list {
@@ -37,15 +39,20 @@
 	corner-shape: squircle;
 	border-radius: 50px;
 	min-width: 250px;
-	min-height: 200px;
+	padding-bottom: 50px;
 	margin-right: 20px;
 	margin-left: 20px;
 	border: 2px solid;
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+	height: fit-content;
 }
 
 .add-list {
-	background-color: var(--header2-color);
+	background-color: var(--header-color);
 	corner-shape: squircle;
 	border-radius: 50px;
 	min-width: 250px;
@@ -69,6 +76,7 @@
 .list-container {
 	display: flex;
 	justify-content: left;
+	align-content: start;
 	overflow-x: auto;
 	flex-wrap: nowrap;
 }
@@ -80,6 +88,26 @@
 	background-color: var(--text-color);
 	color: var(--header-color);
 	width: 30px;
+	cursor: pointer;
+}
+
+.add-task-button {
+	background-color: var(--header-color);
+	color: var(--text-color);
+	border-color: var(--text-color);
+	border: 2px solid;
+	width: 220px;
+	text-align: center;
+	corner-shape: squircle;
+	border-radius: 30px;
+	height: 30px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	order: -1;
 	cursor: pointer;
 }
 

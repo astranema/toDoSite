@@ -11,15 +11,33 @@ darkModeButton.addEventListener("click", function () {
 });
 const addListButton = document.getElementById("add-list-button");
 addListButton.addEventListener("click", addList);
+addList();
 
 function addList() {
+	// making the list
 	const list = document.createElement("div");
 	list.classList.add("list");
+	// making the header
 	const listHeader = document.createElement("div");
 	listHeader.classList.add("list-header");
 	listHeader.textContent = "Title";
+	// making the + button
+	const addTaskButton = document.createElement("div");
+	addTaskButton.textContent = "+";
+	addTaskButton.classList.add("add-task-button");
+	addTaskButton.addEventListener("click", function () {
+		addTask(list);
+	})
+	// adding everything
 	listContainer.appendChild(list);
 	list.appendChild(listHeader);
+	list.appendChild(addTaskButton);
+}
+
+function addTask(list) {
+	const newTask = document.createElement("div");
+	newTask.textContent = "pee";
+	list.appendChild(newTask);
 }
 
 function updateDarkMode() {
