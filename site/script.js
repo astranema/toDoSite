@@ -20,7 +20,16 @@ function addList() {
 	// making the header
 	const listHeader = document.createElement("div");
 	listHeader.classList.add("list-header");
-	listHeader.textContent = "Title";
+	// making the header title
+	const listHeaderTitle = document.createElement("div");
+	listHeaderTitle.classList.add("list-header-title");
+	listHeaderTitle.textContent = "Title";
+	// making the trash button
+	const deleteList = document.createElement("div");
+	deleteList.classList.add("delete-list");
+	deleteList.addEventListener("click", function () {
+		list.remove();
+	})
 	// making the + button
 	const addTaskButton = document.createElement("div");
 	addTaskButton.textContent = "+";
@@ -32,6 +41,8 @@ function addList() {
 	listContainer.appendChild(list);
 	list.appendChild(listHeader);
 	list.appendChild(addTaskButton);
+	listHeader.appendChild(deleteList);
+	listHeader.appendChild(listHeaderTitle);
 }
 
 function addTask(list) {
