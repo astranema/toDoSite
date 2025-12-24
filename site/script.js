@@ -20,16 +20,21 @@ function addList() {
 	// making the header
 	const listHeader = document.createElement("div");
 	listHeader.classList.add("list-header");
-	// making the header title
+	// making the titleContainer
+	const listHeaderTitleContainer = document.createElement("div");
+	listHeaderTitleContainer.classList.add("list-header-title-container");
+	// making the title
 	const listHeaderTitle = document.createElement("div");
-	listHeaderTitle.classList.add("list-header-title");
 	listHeaderTitle.textContent = "Title";
+	listHeaderTitle.addEventListener("click", function () {
+		makeInputBox(listHeaderTitleContainer, listHeaderTitle);
+	});
 	// making the trash button
 	const deleteList = document.createElement("div");
 	deleteList.classList.add("delete-list");
 	deleteList.addEventListener("click", function () {
 		list.remove();
-	})
+	});
 	// making the + button
 	const addTaskButton = document.createElement("div");
 	addTaskButton.textContent = "+";
@@ -42,7 +47,23 @@ function addList() {
 	list.appendChild(listHeader);
 	list.appendChild(addTaskButton);
 	listHeader.appendChild(deleteList);
-	listHeader.appendChild(listHeaderTitle);
+	listHeader.appendChild(listHeaderTitleContainer);
+	listHeaderTitleContainer.appendChild(listHeaderTitle);
+}
+
+function makeInputBox(titleContainer, text) {
+	text.style.display = "none";
+	const inputBox = document.createElement("input");
+	inputBox.classList.add("list-title-input-box");
+	inputBox.addEventListener('keydown', function (event) {
+		if (event.key === "Enter") {
+			text.style.display = "block";
+			text.textContent = event.target.value;
+			inputBox.remove();
+		}
+	});
+	titleContainer.appendChild(inputBox);
+	inputBox.focus();
 }
 
 function addTask(list) {
@@ -61,15 +82,13 @@ function updateDarkMode() {
 }
 
 function setThemeDark() {
-	root.style.setProperty("--bg-color", "#000022");
-	root.style.setProperty("--text-color", "#ffddbb");
-	root.style.setProperty("--header-color", "#000044");
-	root.style.setProperty("--header2-color", "#000066");
+	root.style.setProperty("--bg-color", "#0E051D");
+	root.style.setProperty("--text-color", "#DDDDDD");
+	root.style.setProperty("--header-color", "#0C0C3D");
 }
 
 function setThemeLight() {
 	root.style.setProperty("--bg-color", "#ffeecc");
 	root.style.setProperty("--text-color", "#000044");
 	root.style.setProperty("--header-color", "#ffddbb");
-	root.style.setProperty("--header2-color", "#ffccaa");
 }

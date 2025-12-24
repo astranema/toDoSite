@@ -2,7 +2,6 @@
 	--bg-color: #ffeecc;
 	--text-color: #000044;
 	--header-color: #ffddbb;
-	--header2-color: #ffccaa;
 }
 
 * {
@@ -17,12 +16,12 @@
 	font-size: 0.7rem;
 	padding-bottom: 10px;
 	padding-top: 10px;
-	border-bottom: 2px solid;
+	border-bottom: 1px solid;
 	margin-bottom: 20px;
 	display: flex;
 }
 
-.list-header-title {
+.list-header-title-container {
 	margin-right: auto;
 	margin-left: 20px;
 	font-weight: 600;
@@ -41,8 +40,7 @@
 }
 
 .delete-list {
-	corner-shape: squircle;
-	border-radius: 30px;
+	border-radius: 5px;
 	margin-right: 20px;
 	background-color: var(--text-color);
 	width: 30px;
@@ -52,19 +50,22 @@
 
 .list {
 	background-color: var(--header-color);
-	corner-shape: squircle;
-	border-radius: 50px;
+	border-radius: 30px;
 	min-width: 250px;
 	padding-bottom: 50px;
 	margin-right: 20px;
 	margin-left: 20px;
-	border: 2px solid;
+	border: 1px solid;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	justify-content: start;
 	align-items: center;
 	height: fit-content;
+}
+
+.list-title-input-box {
+	background-color: var(--header-color);
 }
 
 .add-list {
@@ -75,7 +76,7 @@
 	height: 40px;
 	margin-right: 20px;
 	margin-left: 20px;
-	border: 2px solid;
+	border: 1px solid;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -109,10 +110,9 @@
 	background-color: var(--header-color);
 	color: var(--text-color);
 	border-color: var(--text-color);
-	border: 2px solid;
+	border: 1px solid;
 	width: 220px;
-	corner-shape: squircle;
-	border-radius: 30px;
+	border-radius: 10px;
 	height: 30px;
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -130,9 +130,8 @@ body {
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--bg-color: #000022;
-		--text-color: #ffddbb;
-		--header-color: #000044;
-		--header2-color: #000066;
+		--bg-color: #130627;
+		--text-color: #F4D8AC;
+		--header-color: #0C0C3D;
 	}
 }
